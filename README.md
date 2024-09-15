@@ -4,7 +4,7 @@
 #### Installation
 
 ```git
-git clone <link of the repository>
+git clone https://github.com/arkeasz/script-autoclick.git
 ```
 ***Use the package manager to install the packages***
 
