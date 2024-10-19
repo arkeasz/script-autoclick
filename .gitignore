@@ -1,6 +1,8 @@
 venv
+.venv
 __pycache__
 __pypackages__
 textual.log
 build
 dist
+**/*.spec
