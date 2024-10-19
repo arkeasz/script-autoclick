@@ -1,6 +1,7 @@
 import time
 import threading
-from pynput.mouse import Controller
+from pynput.mouse import Controller, Button
+from enum import Enum
 
 mouse = Controller()
 

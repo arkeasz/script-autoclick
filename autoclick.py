@@ -1,36 +1,29 @@
 # !/usr/bin/python
-from typing import List
 from click_mouse import *
 from pynput.keyboard import Listener, KeyCode
 from pynput.mouse import Button, Controller
 from rich.console import Console
 from rich.style import Style
-import sys
+import argparse
 import os
 
 console = Console()
 
-def len(list: List) -> int:
-    count = 0
+parser = argparse.ArgumentParser(description="Autoclicker")
+parser.add_argument("--left", action="store_true", help="Use left mouse button")
+parser.add_argument("--right", action="store_true", help="Use right mouse button")
+args = parser.parse_args()
 
-    for el in list:
-        count += 1
-    
-    return count
+delay: float = 0.1
+button = Button.left
 
-delay_left: float = 0.1
-
-
-if len(sys.argv) > 1:
-    if sys.argv[1] == "--left":
-        button = Button.left
-        delay_left: float = 0.0005
-    elif sys.argv[1] == "--right":
-        button = Button.right
-        delay_left: float = 0.005
-else:
+if args.left:
     button = Button.left
-    delay_left: float = 0.0005
+    delay: float = 0.05
+elif args.right:
+    button = Button.right
+    delay: float = 0.5
+
 
 os.system('cls' if os.name == 'nt' else 'clear')
 console.print("PRESS 'r'", style="#aaaaaa", justify="center", )
@@ -38,7 +31,7 @@ start_stop_key = KeyCode(char='r')
 exit_key = KeyCode(char='x')
 
 
-click_thread = ClickMouse(delay_left, button)
+click_thread = ClickMouse(delay, button)
 click_thread.start()
 
 
