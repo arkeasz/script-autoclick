@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 * windows (powershell)
 ```powershell
-& venv/scripts/activate
+venv/bin/activate
 ```
 
 * linux (bash)
@@ -31,12 +31,12 @@ pip install -r requirements.txt
 source venv/scripts/activate.nu
 ```
 
-* Finally use the script 
+* Finally use the script
 ```bash
 py autoclick.py --left
 ```
 
-#### **Use** 
+#### **Use**
 Press the key:
 
 **r**: For activate the clicks of the button left of the mouse or desactivate the clicks
