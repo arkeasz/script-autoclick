@@ -14,22 +14,30 @@ class AutoClickApp(App):
         super().__init__()
         self.delay = delay
         self.button = button
+        self.status_display = Static(self.status)
         self.click_thread = ClickMouse(delay, button, self.update_status)
         self.listener = None
 
     def compose(self) -> ComposeResult:
-        self.status_display = Static(self.status)
+        self.status_display = Static(self.status, id="status_display")
         instructions = Static("[cyan]Press [bold]R[/bold] to start/stop | Press [bold]X[/bold] to exit[/cyan]")
         yield self.status_display
         yield instructions
 
+    def watch_status(self, new_status: str):
+        if hasattr(self, 'status_display'):
+            self.status_display.update(new_status)
+
 
     def update_status(self, message):
         self.status = message
+        if hasattr(self, 'status_display'):
+            self.status_display.update(message)
         if "RUNNING" in message:
-            self.screen.styles.background = Color(78, 191, 96) 
+            self.screen.styles.background = Color(78, 191, 96)
         else:
-            self.screen.styles.background = Color(191, 78, 96) 
+            self.screen.styles.background = Color(191, 78, 96)
+
 
 
     def on_mount(self) -> None:
