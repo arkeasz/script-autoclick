@@ -1,5 +1,5 @@
 ## **AUTOCLICK SCRIPT**
----
+![autoclick](./assets/autoclick.gif)
 
 #### Installation
 
@@ -7,7 +7,6 @@
 git clone https://github.com/arkeasz/script-autoclick.git
 ```
 ***Use the package manager to install the packages***
-
 
 ```bash
 pip install -r requirements.txt
@@ -17,28 +16,32 @@ pip install -r requirements.txt
 
 **Active the virtualenv**
 
+```sh
+python -m venv .venv
+```
+
 * windows (powershell)
 ```powershell
-venv/bin/activate
+.\.venv\bin\activate
 ```
 
 * linux (bash)
 ```bash
-. venv/scripts/activate
+. ./.venv/scripts/activate
 ```
 * Nushell
 ```bash
-source venv/scripts/activate.nu
+source ./.venv/scripts/activate.nu
 ```
 
 * Finally use the script
 ```bash
-py autoclick.py --left
+python main.py
 ```
 
 #### **Use**
 Press the key:
 
-**r**: For activate the clicks of the button left of the mouse or desactivate the clicks
+**R** -> For activate the clicks of the button left of the mouse or desactivate the clicks
 
-**x**: Finish the script
+**X** -> Finish the script
