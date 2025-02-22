@@ -1,4 +1,4 @@
-$jsonUrl = "https://raw.githubusercontent.com/arkeasz/script-autoclick/main/versions.json"
+$jsonUrl = "https://raw.githubusercontent.com/arkeasz/script-autoclick/master/versions.json"
 
 try {
     $json = Invoke-RestMethod -Uri $jsonUrl -Method GET
