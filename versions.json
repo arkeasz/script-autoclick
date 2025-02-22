@@ -1,0 +1,10 @@
+{
+    "name": "autoclick",
+    "bin": "autoclick",
+    "dist": {
+      "latest": "1.1.0"
+    },
+    "versions": {
+      "1.1.0": { "win": "https://github.com/arkeasz/script-autoclick/releases/download/v1.1.0/autoclick.exe" },
+    }
+  }
