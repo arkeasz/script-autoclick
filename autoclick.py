@@ -28,7 +28,6 @@ class AutoClickApp(App):
         if hasattr(self, 'status_display'):
             self.status_display.update(new_status)
 
-
     def update_status(self, message):
         self.status = message
         if hasattr(self, 'status_display'):
@@ -37,8 +36,6 @@ class AutoClickApp(App):
             self.screen.styles.background = Color(78, 191, 96)
         else:
             self.screen.styles.background = Color(191, 78, 96)
-
-
 
     def on_mount(self) -> None:
         self.screen.styles.background = Color(191, 78, 96)

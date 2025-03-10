@@ -10,13 +10,13 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     delay = 0.1
-    button = Button.left
+    button = 'left'
 
     if args.left:
-        button = Button.left
+        button = 'left'
         delay = 0.05
     elif args.right:
-        button = Button.right
+        button = 'right'
         delay = 0.5
 
     os.system('cls' if os.name == 'nt' else 'clear')
